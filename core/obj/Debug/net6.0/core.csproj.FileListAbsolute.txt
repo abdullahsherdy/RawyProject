@@ -1,0 +1,12 @@
+E:\project\Rawy\core\bin\Debug\net6.0\core.deps.json
+E:\project\Rawy\core\bin\Debug\net6.0\core.dll
+E:\project\Rawy\core\bin\Debug\net6.0\core.pdb
+E:\project\Rawy\core\obj\Debug\net6.0\core.csproj.AssemblyReference.cache
+E:\project\Rawy\core\obj\Debug\net6.0\core.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\Rawy\core\obj\Debug\net6.0\core.AssemblyInfoInputs.cache
+E:\project\Rawy\core\obj\Debug\net6.0\core.AssemblyInfo.cs
+E:\project\Rawy\core\obj\Debug\net6.0\core.csproj.CoreCompileInputs.cache
+E:\project\Rawy\core\obj\Debug\net6.0\core.dll
+E:\project\Rawy\core\obj\Debug\net6.0\refint\core.dll
+E:\project\Rawy\core\obj\Debug\net6.0\core.pdb
+E:\project\Rawy\core\obj\Debug\net6.0\ref\core.dll

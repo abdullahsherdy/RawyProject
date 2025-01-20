@@ -1,0 +1,12 @@
+E:\project\Rawy\Presention\bin\Debug\net6.0\Presention.deps.json
+E:\project\Rawy\Presention\bin\Debug\net6.0\Presention.dll
+E:\project\Rawy\Presention\bin\Debug\net6.0\Presention.pdb
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.csproj.AssemblyReference.cache
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.GeneratedMSBuildEditorConfig.editorconfig
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.AssemblyInfoInputs.cache
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.AssemblyInfo.cs
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.csproj.CoreCompileInputs.cache
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.dll
+E:\project\Rawy\Presention\obj\Debug\net6.0\refint\Presention.dll
+E:\project\Rawy\Presention\obj\Debug\net6.0\Presention.pdb
+E:\project\Rawy\Presention\obj\Debug\net6.0\ref\Presention.dll
