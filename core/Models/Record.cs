@@ -16,7 +16,7 @@ namespace core.Models
         public DateTime DatePosted { get; set; } = DateTime.UtcNow;
 
         [ForeignKey("TellerId")]
-        public int TellerId { get; set; }
+        public string TellerId { get; set; }
         public ICollection<Playlist> playlists { get; set; }= new HashSet<Playlist>();
         public Teller Teller { get; set; }
 

@@ -8,5 +8,6 @@ namespace core.Models
 {
     internal class Admin
     {
+
     }
 }

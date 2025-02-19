@@ -16,6 +16,7 @@ namespace core.Models
         public string Descriotion { get; set; }
 
         public string? ProfilePicture { get; set; }
+
         public ICollection<Book> Books { get; set; }=new HashSet<Book>();
 
 

@@ -9,9 +9,10 @@ E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.GeneratedMSBuildEditorConfi
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.AssemblyInfoInputs.cache
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.AssemblyInfo.cs
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.csproj.CoreCompileInputs.cache
-E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.csproj.CopyComplete
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.dll
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\refint\Repsotiry.dll
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.pdb
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.genruntimeconfig.cache
 E:\project\Rawy\Repsotiry\obj\Debug\net6.0\ref\Repsotiry.dll
+E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.sourcelink.json
+E:\project\Rawy\Repsotiry\obj\Debug\net6.0\Repsotiry.csproj.Up2Date

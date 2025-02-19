@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Repsotiry")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+147e1fe28b1875afde14d70e68ac0517fcc4392b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Repsotiry")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Repsotiry")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,7 +14,8 @@ namespace core.Models
         [Required]
         [MaxLength(200)]
         public string BookTitle { get; set; }
-
+        [Required]
+        public string bookurl { get; set; }
         [Required]
         [MaxLength(100)]
         public string Author { get; set; }

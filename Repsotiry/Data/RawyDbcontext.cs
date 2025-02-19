@@ -20,7 +20,11 @@ namespace Repsotiry.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Entity<Subscription>()
+                .Property(s => s.Price)
+                .HasColumnType("decimal(18,2)"); 
+
+            base.OnModelCreating(modelBuilder);
         }
         public DbSet<Aurthor> Aurthors { get; set; }
         public DbSet<Book> Books { get; set; }

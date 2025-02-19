@@ -10,3 +10,4 @@ E:\project\Rawy\core\obj\Debug\net6.0\core.dll
 E:\project\Rawy\core\obj\Debug\net6.0\refint\core.dll
 E:\project\Rawy\core\obj\Debug\net6.0\core.pdb
 E:\project\Rawy\core\obj\Debug\net6.0\ref\core.dll
+E:\project\Rawy\core\obj\Debug\net6.0\core.sourcelink.json
