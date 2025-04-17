@@ -1,5 +1,4 @@
 ﻿using core.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,18 +9,16 @@ using System.Threading.Tasks;
 
 namespace Repsotiry.Data
 {
-    public class IdentityContext : IdentityDbContext<BaseUser>
-    {
+    //public class IdentityDbContexts : IdentityDbContext<BaseUser>
+    //{
+    //    private readonly DbContextOptions<IdentityDbContexts> options;
 
-        public IdentityContext(DbContextOptions<IdentityContext> options):base (options)
-        {
-            
-        }
+    //    public IdentityDbContexts(DbContextOptions<IdentityDbContexts> options) : base(options)
+    //    {
+    //        this.options = options;
+    //    }
+    //    public DbSet<BaseUser> users { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
 
-    }
+    //}
 }

@@ -27,7 +27,9 @@ namespace Services
             var authClaims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Name,user.UserName),
-                new Claim(ClaimTypes.Email,user.Email)
+                new Claim(ClaimTypes.Email,user.Email),
+                new Claim(ClaimTypes.NameIdentifier,user.Id)
+
             };
 
             var userRoles = await userManager.GetRolesAsync(user);
@@ -37,11 +39,12 @@ namespace Services
             var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]));
 
             var token = new JwtSecurityToken(
-                audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.UtcNow.AddDays(double.Parse(_configuration["JWT:DurationInDays"])),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature)
-                );
+      issuer: _configuration["JWT:ValidIssuer"], 
+      audience: _configuration["JWT:ValidAudience"],
+      expires: DateTime.UtcNow.AddDays(double.Parse(_configuration["JWT:DurationInDays"])),
+      claims: authClaims,
+      signingCredentials: new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature)
+  );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

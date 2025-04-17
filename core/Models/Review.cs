@@ -14,21 +14,22 @@ namespace core.Models
    
         [ForeignKey("UserId")]
         [Required]
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         
-        public User? User { get; set; }
+        public BaseUser? User { get; set; }
 
-        [Required]
-        public int BookId { get; set; }
+        public int? BookId { get; set; }
 
         [ForeignKey("BookId")]
         public Book? Books { get; set; }
 
         [Range(1, 5)]
-        public int Rating { get; set; } 
+        public int? Rating { get; set; } 
 
         public string? Comment { get; set; }
 
-        public DateTime DatePosted { get; set; } = DateTime.UtcNow;
+        public DateTime? DatePosted { get; set; } = DateTime.UtcNow;
+
+
     }
 }

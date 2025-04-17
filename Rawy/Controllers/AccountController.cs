@@ -17,16 +17,20 @@ namespace Rawy.Controllers
         private readonly SignInManager<BaseUser> _signInManager;
         private readonly IAuthService _authService;
         private readonly IMapper _mapper;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<BaseUser> userManager,
+        public AccountController(
+            UserManager<BaseUser> userManager,
             SignInManager<BaseUser> signInManager,
             IAuthService authService,
-            IMapper mapper)
+            IMapper mapper,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _authService = authService;
             _mapper = mapper;
+            _roleManager = roleManager;
         }
 
         [HttpPost("login")]
@@ -43,7 +47,7 @@ namespace Rawy.Controllers
                 Token = await _authService.CreateTokenAsync(user, _userManager)
             });
         }
-
+        
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> register(RegisterDto model)
         {
@@ -57,8 +61,11 @@ namespace Rawy.Controllers
                 DisplayName = model.DisplayName,
                 PhoneNumber = model.PhoneNumber,
             };
+    
             var result = await _userManager.CreateAsync(user, model.Password);
-            if (!result.Succeeded) return BadRequest();
+            if (!result.Succeeded) return BadRequest(); 
+            await _userManager.AddToRoleAsync(user, "User");
+            
             return Ok(new UserDto()
             {
                 Email = user.Email,
@@ -72,5 +79,17 @@ namespace Rawy.Controllers
         public async Task<ActionResult<bool>> CheckEmailExists(string email)
     => await _userManager.FindByEmailAsync(email) is not null;
 
+      [Authorize(Roles = "Admin")]
+      [HttpPost("make-admin-by-id")]
+        public async Task<ActionResult> MakeUserAdminById([FromBody] string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return NotFound("User not found");
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            var result = await _userManager.AddToRoleAsync(user, "Admin");
+            if (!result.Succeeded) return BadRequest("Failed to assign admin role");
+            return Ok($"User with ID {userId} is now an admin.");
+        }
     }
 }

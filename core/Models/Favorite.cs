@@ -14,11 +14,11 @@ namespace core.Models
         [MaxLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        public string UserId { get; set; }
+       
+        public string BaseUserId { get; set; }
 
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        [ForeignKey("BaseUserId")]
+        public BaseUser User { get; set; }
 
     public ICollection<Book> Books { get;set; } = new HashSet<Book>();
     }

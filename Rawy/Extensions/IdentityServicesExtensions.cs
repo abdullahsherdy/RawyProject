@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Repsotiry.Data;
 using Services;
+using System.Security.Claims;
 using System.Text;
 
 namespace Rawy.Extensions
@@ -13,7 +14,7 @@ namespace Rawy.Extensions
     {
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddIdentity<BaseUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
+            services.AddIdentity<BaseUser, IdentityRole>().AddEntityFrameworkStores<RawyDbcontext>();
 
             services.AddScoped(typeof(IAuthService), typeof(AuthService));
 
@@ -28,11 +29,12 @@ namespace Rawy.Extensions
                     {
                         ValidateAudience = true,
                         ValidAudience = configuration["JWT:ValidAudience"],
-                        ValidateIssuer = true,
+                        ValidIssuer = configuration["JWT:ValidIssuer"],
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecretKey"])),
                         ValidateLifetime = true,
-                        ClockSkew = TimeSpan.FromDays(double.Parse(configuration["JWT:DurationInDays"]))
+                        ClockSkew = TimeSpan.FromDays(double.Parse(configuration["JWT:DurationInDays"])),
+                           NameClaimType = ClaimTypes.NameIdentifier
                     };
                 });
             return services;

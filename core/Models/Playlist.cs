@@ -12,15 +12,17 @@ namespace core.Models
     {
 
    
-        [Required]
-        public string UserId { get; set; }
+        
+        [ForeignKey("BaseUserId")]
+        public string BaseUserId { get; set; }
 
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        
+        public BaseUser User { get; set; }
 
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
+
 
         public ICollection<Record> records { get; set; } = new HashSet<Record>();
 

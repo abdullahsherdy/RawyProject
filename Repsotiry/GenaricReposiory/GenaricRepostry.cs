@@ -20,12 +20,8 @@ namespace Repsotiry.GenaricReposiory
         {
             this.rawyDbcontext = rawyDbcontext;
         }
-        public async Task<IEnumerable<T>> getallAsync()
-        {
-          return await rawyDbcontext.Set<T>().ToListAsync();
-        }
 
-        public async Task<IEnumerable<T>> getallwithspacAsync(Ispacfiaction<T> spac)
+        public async Task<IReadOnlyList<T>> getallwithspacAsync(Ispacfiaction<T> spac)
         {
             return await Applicationsystem(spac).ToListAsync();
         }
@@ -39,6 +35,38 @@ namespace Repsotiry.GenaricReposiory
         public async Task<T> getbyidwithspacAsync(Ispacfiaction<T> spac)
         {
             return await Applicationsystem(spac).FirstOrDefaultAsync();
+        }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await rawyDbcontext.Set<T>().FindAsync(id);
+        }
+ 
+        public async Task<IReadOnlyList<T>> GetAllAsync()
+        {
+            return await rawyDbcontext.Set<T>().ToListAsync();
+        }
+        public async Task<ICollection<T>> GetBooksByIdsAsync(ICollection<int> Ids)
+        {
+            return await rawyDbcontext.Set<T>()
+                .Where(b => Ids.Contains(b.Id))
+                .ToListAsync();
+        }
+        public async Task<T> set(T entity)
+        {
+            await rawyDbcontext.AddAsync(entity); 
+            await rawyDbcontext.SaveChangesAsync(); 
+            return entity;
+        }
+        public async Task<T> UpdateAsync(T entity)
+        {
+            rawyDbcontext.Update(entity);
+            await rawyDbcontext.SaveChangesAsync();
+            return entity;
+        }
+        public async Task DeleteAsync(T entity)
+        {
+            rawyDbcontext.Set<T>().Remove(entity);
+            await rawyDbcontext.SaveChangesAsync();
         }
         private IQueryable<T> Applicationsystem(Ispacfiaction<T> spac) {
             return spacificationEvalator<T>.GetQuery(rawyDbcontext.Set<T>(), spac);
